@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mock_api:
+    image: jordimartin/mmock
+    ports:
+      - 8082:8082
+      - 8083:8083
+    volumes:
+      - ./mock_api.config.yml:/config/mock_api.config.yml
+
+  proxy:
+    image: ecr-proxy:dev
+    build: ../..
+    ports:
+      - 80:80

@@ -7,10 +7,11 @@ services:
       - 8082:8082
       - 8083:8083
     volumes:
-      - ./mock_api.config.yml:/config/mock_api.config.yml
+      - ./mocks:/config
 
   proxy:
     image: ecr-proxy:dev
     build: ../..
     ports:
       - 80:80
+      - 443:443

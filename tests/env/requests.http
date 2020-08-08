@@ -1,7 +1,12 @@
 # install vscode extention https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-get http://localhost:8083/?name=bob
+GET http://localhost:8083/?name=bob
 
 ###
 
-get https://localhost:80
+GET http://localhost:80/health
+
+###
+
+GET http://localhost:443/v2
+

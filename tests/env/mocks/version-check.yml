@@ -1,0 +1,5 @@
+request:
+  method: GET
+  path: "/v2"
+response:
+  statusCode: 200

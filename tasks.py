@@ -6,7 +6,7 @@ from invoke import task, Context
 def start(c, detached=False):
     """start test environment"""
     
-    options="-f tests/env/docker-compose.yml up"
+    options="-f tests/env/docker-compose.yml up --build"
     if detached:
         options += ' -d '
 

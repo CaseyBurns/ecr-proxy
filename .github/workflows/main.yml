@@ -1,0 +1,29 @@
+
+name: CI
+
+on:
+  push:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: restore
+      run: |
+        pip install invoke
+        invoke restore
+    - name: start test env
+      run: invoke start -d
+    - name: run tests
+      run: |
+        invoke test
+        invoke stop
+    - name: build
+      if: startsWith( github.ref, 'refs/tags/release/')
+      run: invoke build

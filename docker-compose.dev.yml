@@ -1,6 +1,14 @@
 version: '3.8'
 
 services:
+  mock_api:
+    image: jordimartin/mmock
+    ports:
+      - 8082:8082
+      - 8083:8083
+    volumes:
+      - ./mocks:/config
+
   proxy:
     environment:
       - NGINX_PROXY=mock_api

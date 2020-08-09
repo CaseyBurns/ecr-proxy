@@ -10,3 +10,6 @@ GET http://localhost:80/health
 
 GET http://localhost:443/v2
 
+###
+
+GET http://localhost:443/v2/_catalog

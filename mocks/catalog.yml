@@ -1,0 +1,8 @@
+request:
+  method: GET
+  path: "/v2/_catalog"
+response:
+  statusCode: 200
+  content-type: text/plain; charset=utf-8
+  Docker-Distribution-Api-Version: registry/2.0
+  body: '{"repositories":["hello-world"]}'

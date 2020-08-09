@@ -6,7 +6,7 @@ from invoke import task, Context
 def start(c, detached=False):
     """start test environment"""
     
-    options="-f tests/env/docker-compose.yml up --build"
+    options="-f docker-compose.yml -f docker-compose.dev.yml up"
     if detached:
         options += ' -d '
 
@@ -15,7 +15,7 @@ def start(c, detached=False):
 @task
 def stop(c):
     """stop test environment"""
-    c.run('docker-compose -f tests/env/docker-compose.yml down')
+    c.run('docker-compose -f docker-compose.yml -f docker-compose.dev.yml down')
 
 @task
 def restore(c):
@@ -23,7 +23,7 @@ def restore(c):
     c.run('pip install -r tests/requirements.txt')
 
 @task
-def test(c):
+def tests(c):
     """run tests"""
     c.run('pytest --color=yes')
 

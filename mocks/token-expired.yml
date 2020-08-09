@@ -1,0 +1,14 @@
+
+request:
+    method: GET
+    path: "/v2/token-expired/tags/list"
+response:
+    statusCode: 403
+    content-type: application/json; charset=utf-8
+    Docker-Distribution-Api-Version: registry/2.0
+    body: >
+        '"errors": [
+        {
+            "code": "DENIED",
+            "message": "Your authorization token has expired. Reauthenticate and try again."
+        }]}'

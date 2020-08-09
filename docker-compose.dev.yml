@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  proxy:
+    environment:
+      - NGINX_PROXY=mock_api
+      - NGINX_PROXY_PORT=8083

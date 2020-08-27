@@ -1,11 +1,11 @@
 
-name: CI
+name: ecr-proxy-ci
 
 on:
   push:
   
 jobs:
-  build:
+  CI:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
@@ -27,3 +27,4 @@ jobs:
     - name: build
       if: startsWith( github.ref, 'refs/tags/release/')
       run: invoke build
+      # todo #3 publish image on release

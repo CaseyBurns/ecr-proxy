@@ -5,8 +5,8 @@ from invoke import task, Context
 @task(help={'detached': 'start detacted docker-compose'})
 def start(c, detached=False):
     """start test environment"""
-    
-    options="-f docker-compose.yml -f docker-compose.dev.yml up"
+
+    options = "-f docker-compose.yml -f docker-compose.dev.yml up"
     if detached:
         options += ' -d '
 

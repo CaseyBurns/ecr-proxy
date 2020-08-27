@@ -15,3 +15,7 @@ list build tasks:
 ```powershell
 invoke --list
 ```
+
+## resources
+
+- [Docker Registry API v2 Spec](https://docs.docker.com/registry/spec/api/)

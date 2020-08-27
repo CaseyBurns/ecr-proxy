@@ -29,13 +29,15 @@ jobs:
         invoke stop
 
   publish:
+    runs-on: ubuntu-latest
     needs: ci
-    # if: startsWith( github.event_name, 'release') # testing
-    - name: Push to GitHub Packages
-      uses: docker/build-push-action@v1
-      with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
-        repository: CaseyBurns/my-repo/ecr-proxy
-        tag_with_ref: true
+    steps:
+        # if: startsWith( github.event_name, 'release') # testing
+      - name: Push to GitHub Packages 
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: CaseyBurns/my-repo/ecr-proxy
+          tag_with_ref: true
